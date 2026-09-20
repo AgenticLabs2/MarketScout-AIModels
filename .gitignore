@@ -1,0 +1,7 @@
+.venv
+.venv_win
+.venv_wsl
+.env
+__pycache__/
+*.egg-info/
+temp.py

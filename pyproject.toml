@@ -1,0 +1,43 @@
+[project]
+name = "marketscout-cli"
+version = "0.1.0"
+description = "a TUI‑first Python package and multi‑agent market research engine that orchestrates validated data collection, analysis, and report synthesis into citation‑rich PDF reports"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1.8",
+    "docstring-parser>=0.16",
+    "fastapi[all]>=0.115.14",
+    "fastmcp>=2.5.0",
+    "jinja2>=3.1.6",
+    "jq>=1.8.0",
+    "langchain>=1.0.0",
+    "langchain-openai>=1.0.0",
+    "langchain-ollama>=1.0.0",
+    "langgraph>=1.0.0",
+    "markdown-it-py>=3.0.0",
+    "mdit-plain>=1.0.1",
+    "openpyxl>=3.1.5",
+    "pandas>=2.2.3",
+    "pypdf>=5.5.0",
+    "python-dotenv>=1.0.0",
+    "python-docx>=1.1.2",
+    "python-pptx>=1.0.2",
+    "requests>=2.32.3",
+    "rich>=14.0.0",
+    "tabulate>=0.9.0",
+    "trafilatura>=2.0.0",
+    "typing-extensions>=4.12.0",
+    "uvicorn>=0.34.2",
+    "weasyprint>=65.1",
+]
+
+[project.scripts]
+marketscout = "src.app:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
