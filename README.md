@@ -88,6 +88,35 @@ MarketScout is a Python market-research platform that coordinates specialized AI
 
 ## 🏗 Architecture
 
+
+## High‑Level Architecture
+A sequential network of AI AGENTS operates as MCP Clients, interfacing with our central FastMCP server. This server hosts an extensive collection of tools and data sources, providing a robust infrastructure for agent operations.
+
+The following diagram illustrates the high‑level architecture of the system:
+> NOTE: Actual count of agents is not represented in the diagram.
+```mermaid
+flowchart LR
+    subgraph MCP-Server
+        direction TB
+        A[FastMCP Server] -->|Tools| B[Tool 1]
+        A -->|Tools| C[Tool 2]
+        A -->|Tools| D[Tool 3]
+        A -->|Data Sources| E[Data Source 1]
+        A -->|Data Sources| F[Data Source 2]
+    end
+
+    subgraph Agents
+        direction TB
+        G[Agent 1] -->|MCP Client| A
+        H[Agent 2] -->|MCP Client| A
+        I[Agent 3] -->|MCP Client| A
+    end
+
+    style MCP-Server fill:#c9ffff,stroke:#333,stroke-width:4px;
+    style Agents fill:#bbf,stroke:#333,stroke-width:4px;    
+```
+---
+
 ### Platform Topology
 
 ```mermaid
